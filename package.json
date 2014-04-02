@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "request": "^2.34.0",
+    "gulp": "^3.6.0",
+    "gulp-jshint": "^1.5.2",
+    "jshint-stylish": "^0.1.5",
+    "gulp-jsonlint": "0.0.3"
+  }
+}
