@@ -13,7 +13,7 @@ function copyPages() {
 
   source.pages = JSON.parse(
     fs.readFileSync(
-      './source_pages.json',
+      './data_source_pages.json',
       { encoding: 'utf8' }) ).pages;
 
   console.log('Total source pages: '+source.pages.length);

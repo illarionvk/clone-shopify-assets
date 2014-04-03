@@ -16,24 +16,24 @@ function resolveCollects() {
 
   source.collects = JSON.parse(
     fs.readFileSync(
-      './source_collects.json',
+      './data_source_collects.json',
       { encoding: 'utf8' }) ).collects;
   source.products = JSON.parse(
     fs.readFileSync(
-      './source_products.json',
+      './data_source_products.json',
       { encoding: 'utf8' }) ).products;
   source.custom_collections = JSON.parse(
     fs.readFileSync(
-      './source_custom_collections.json',
+      './data_source_custom_collections.json',
       { encoding: 'utf8' }) ).custom_collections;
 
   destination.products = JSON.parse(
     fs.readFileSync(
-      './destination_products.json',
+      './data_destination_products.json',
       { encoding: 'utf8' }) ).products;
   destination.custom_collections = JSON.parse(
     fs.readFileSync(
-      './destination_custom_collections.json',
+      './data_destination_custom_collections.json',
       { encoding: 'utf8' }) ).custom_collections;
 
   console.log('Total source collects: '+source.collects.length);
@@ -41,12 +41,12 @@ function resolveCollects() {
   for (i = 0; i < source.collects.length; i += 1) {
     findHandles(source.collects[i], source, resolved);
   }
-  fs.writeFileSync('resolved.json', JSON.stringify(resolved), { 'encoding': 'utf8' });
+  fs.writeFileSync('data_collects_resolved.json', JSON.stringify(resolved), { 'encoding': 'utf8' });
 
   for (i = 0; i < resolved.collects.length; i += 1) {
     findDestIDs(resolved.collects[i], destination);
   }
-  fs.writeFileSync('resolved.json', JSON.stringify(resolved), { 'encoding': 'utf8' });
+  fs.writeFileSync('data_collects_resolved.json', JSON.stringify(resolved), { 'encoding': 'utf8' });
 
   createRequests(resolved);
 }
