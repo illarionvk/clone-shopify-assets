@@ -1,0 +1,13 @@
+{
+  "source": {
+    "shop": "YOUR_SHOP.myshopify.com",
+    "apiKey": "",
+    "password": ""
+  },
+  "destination": {
+    "shop": "",
+    "apiKey": "",
+    "password": ""
+  }
+}
+
